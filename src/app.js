@@ -46,10 +46,10 @@ try {
 }
 
 //Progression 3 - Filter players that debuted in ___ year
-function filterByDebut() {
+function filterByDebut(debut) {
   var arr = [];
   players.forEach((element) => {
-    if (element.position == position) {
+    if (element.debut == debut) {
       arr.push(element);
     }
   });
@@ -68,15 +68,13 @@ function filterByPosition(position) {
 
 //Progression 5 - Filter players that have won ______ award
 function filterByAward(awardName) {
-  let Array = [];
-  for (let i = 0; i < players.length; i++) {
-    for (let j = 0; j < players.length; j++) {
-      if (players[i].awards[j].name === awardName) {
-        Array.push(players[i]);
-      }
+  var arr = [];
+  players.forEach((element) => {
+    if (element.awards[0].name == awardName) {
+      arr.push(element);
     }
-  }
-  return Array;
+  });
+  return arr;
 }
 
 //Progression 6 - Filter players that won ______ award ____ times
